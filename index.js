@@ -12,8 +12,6 @@ function loadRule(ruleName) {
 
 const rules = fs
   .readdirSync(path.join(__dirname, "rules"))
-  .filter(name => name.endsWith(".js") && /^[^._]/.test(name) && !name.endsWith(".test.js"))
-  .map(name => name.replace(/\.js$/, ""))
   .reduce((obj, name) => Object.assign(obj, { [name]: loadRule(name) }), {});
 
 module.exports.rules = rules;
