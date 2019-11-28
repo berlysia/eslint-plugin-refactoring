@@ -53,9 +53,7 @@ module.exports = {
                 },
               },
               additionalProperties: {
-                message: {
-                  oneOf: [{ type: "object" }, { type: "object" }],
-                },
+                message: { type: "string" },
               },
             },
           ],
